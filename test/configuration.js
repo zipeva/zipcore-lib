@@ -1,20 +1,20 @@
 const chai = require('chai');
-const X11 = require('wasm-x11-hash');
+const X7 = require('wasm-x7-hash');
 const Hash = require('../lib/crypto/hash');
 const crypto = require('crypto');
-const x11hash = require('@dashevo/x11-hash-js');
+const x7hash = require('@zipeva/x7-hash-js');
 
 const { configure, BlockHeader } = require("../index");
 
 const expect = chai.expect;
 
-const headerBuffer = Buffer.from('0400000097ea9c8bee806143a8ae50116fe3d329dcbb18b5d8ea71a7a213a1b052000000b1950f668df2593684169b0e33ee7fb1b8e00d90ed906d80b4c2baa7d1b65f548f495a57ed98521d348b0700','hex')
+const headerBuffer = Buffer.from('01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff6004ffff001d01044c5761706e6577732e636f6d3a204e6f76616b20446a6f6b6f76696320616e64204361726c6f7320416c636172617a206d65657420696e20612057696d626c65646f6e206d656ee28099732066696e616c2072656d61746368ffffffff0100f2052a010000004341040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9ac00000000','hex')
 describe('configuration', function () {
   before(async () => {
-    const x11 = await X11();
+    const x7 = await X7();
     configure({
-      x11hash: {
-        digest: (input) => x11.digest(input)
+      x7hash: {
+        digest: (input) => x7.digest(input)
       },
       crypto: {
         createHash: () => ({
@@ -28,14 +28,14 @@ describe('configuration', function () {
 
   after(() => {
     configure({
-      x11hash,
+      x7hash,
       crypto
     })
   })
 
-  it('should use external x11 for block header hash', () => {
+  it('should use external x7 for block header hash', () => {
     const blockHeader = new BlockHeader(headerBuffer);
-    expect(blockHeader.hash).to.equal('0000000cc55c08ed64afb41c7c2f382a64901eadfcc6663c4e70987fdc0e8401')
+    expect(blockHeader.hash).to.equal('00000f2db18943ba05cc0d7c4ac5b6b462b40719f8e2c4fca9dfb494e3354a0f')
   })
 
   it('should use external crypto module', () => {

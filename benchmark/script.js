@@ -6,7 +6,7 @@
 var benchmark = require('benchmark');
 var bitcore = require('..');
 var async = require('async');
-var blockData = require('./block-357238.json');
+var blockData = require('./block-25977.json');
 
 var maxTime = 10;
 

@@ -172,7 +172,7 @@ describe('Block', function () {
           merkleRoot:
             'db60a9640ca5b146e114ce161cd6520c884eaa6961266d688077354475a6dea3',
           time: 1721088710,
-          bits: 1e0ffff0,
+          bits: 0x1e0ffff0,
           nonce: 14618,
         },
         transactions: [

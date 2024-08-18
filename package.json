@@ -123,8 +123,8 @@
   "homepage": "https://github.com/zipeva/zipcore-lib",
   "dependencies": {
     "@dashevo/bls": "^1.3.1",
-    "@zipeva/x7-hash-js": "^1.0.3",
     "@types/node": "^12.12.47",
+    "@zipeva/x7-hash-js": "^1.0.3",
     "bloom-filter": "^0.2.0",
     "bn.js": "^4.12.0",
     "bs58": "=4.0.1",
@@ -133,7 +133,8 @@
     "lodash": "^4.17.20",
     "ripemd160": "^2.0.2",
     "tsd": "^0.28.1",
-    "unorm": "^1.6.0"
+    "unorm": "^1.6.0",
+    "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
     "@types/bloom-filter": "^0.2.1",

@@ -1,6 +1,6 @@
 {
   "name": "@zipeva/zipcore-lib",
-  "version": "0.21.6",
+  "version": "0.21.7",
   "description": "A pure and powerful JavaScript Zip library.",
   "author": "Zip Core Group, Inc. <dev@zip.org>",
   "main": "index.js",
